@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "e169c2f3-6d94-473b-83c7-1da921226a30",
+		"name": "Technical_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2390090"
+	},
+	"item": [
+		{
+			"name": "Create Exam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Examen 1\",\r\n    \"questions\":[\r\n        {\r\n            \"question\" :\"Preegunta 1\",\r\n            \"correctAnswer\" : \"opcion1.1\",\r\n            \"score\":3,\r\n            \"answers\": [\r\n                {\"value\":\"opcion1.1\",\"index\":\"A\"},\r\n                {\"value\":\"opcion1.2\",\"index\":\"B\"},\r\n                {\"value\":\"opcion1.3\",\"index\":\"C\"},\r\n                {\"value\":\"opcion1.4\",\"index\":\"D\"}\r\n            ]\r\n        },\r\n        {\r\n            \"question\" :\"Preegunta 2\",\r\n            \"correctAnswer\" : \"opcion2.2\",\r\n            \"score\":35,\r\n            \"answers\": [\r\n                {\"value\":\"opcion2.1\",\"index\":\"A\"},\r\n                {\"value\":\"opcion2.2\",\"index\":\"B\"},\r\n                {\"value\":\"opcion2.3\",\"index\":\"C\"},\r\n                {\"value\":\"opcion2.4\",\"index\":\"D\"}\r\n            ]\r\n        },\r\n        {\r\n            \"question\" :\"Preegunta 3\",\r\n            \"correctAnswer\" : \"opcion3.2\",\r\n            \"score\":35,\r\n            \"answers\": [\r\n                {\"value\":\"opcion3.1\",\"index\":\"A\"},\r\n                {\"value\":\"opcion3.2\",\"index\":\"B\"},\r\n                {\"value\":\"opcion3.3\",\"index\":\"C\"},\r\n                {\"value\":\"opcion3.4\",\"index\":\"D\"}\r\n            ]\r\n        },\r\n        {\r\n            \"question\" :\"Preegunta 4\",\r\n            \"correctAnswer\" : \"opcion4.4\",\r\n            \"score\":25,\r\n            \"answers\": [\r\n                {\"value\":\"opcion4.1\",\"index\":\"A\"},\r\n                {\"value\":\"opcion4.2\",\"index\":\"B\"},\r\n                {\"value\":\"opcion4.3\",\"index\":\"C\"},\r\n                {\"value\":\"opcion4.4\",\"index\":\"D\"}\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/Exam",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"Exam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Victor\",\r\n    \"age\" : 37,\r\n    \"city\": \"San Cristobal de Las Casas\",\r\n    \"timezone\":\"GMT-5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/student",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assignment Exam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentid\": 1,\r\n    \"examid\" : 1,\r\n    \"time\": \"02:50:21\",\r\n    \"date\":  \"2019-02-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/Assignment",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"Assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentresponse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignment\":1,\r\n    \"question\":[\r\n        {\r\n            \"questionid\": 1,\r\n            \"aswerid\":1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/studentresponse",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"studentresponse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/Assignment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"Assignment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
